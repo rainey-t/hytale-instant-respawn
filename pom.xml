@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>dev.hytalemodding</groupId>
-    <artifactId>ReturnByDeath</artifactId>
-    <version>1.0.0</version>
+    <artifactId>RBDPlugin</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>25</maven.compiler.source>
