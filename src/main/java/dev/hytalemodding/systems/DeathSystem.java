@@ -16,21 +16,10 @@ import javax.annotation.Nullable;
 
 public class DeathSystem extends DeathSystems.OnDeathSystem {
 
-    //@Nullable
-    //public Query getQuery() {
-    //    return Player.getComponentType();
-    //}
-
     @Override
     public Query<EntityStore> getQuery() {
         return Player.getComponentType();
     }
-
-    //public void onComponentAdded(@Nonnull Ref ref, @Nonnull DeathComponent component, @Nonnull Store store, @Nonnull CommandBuffer commandBuffer) {
-    //    Player player = (Player) store.getComponent(ref, Player.getComponentType());
-    //    assert player != null;
-    //    player.sendMessage(Message.raw("Test"));
-    //}
 
     @Override
     public void onComponentAdded(@Nonnull Ref ref, @Nonnull DeathComponent component, @Nonnull Store store, @Nonnull CommandBuffer commandBuffer) {
