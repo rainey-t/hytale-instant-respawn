@@ -1,13 +1,16 @@
 {
   "Group": "dev.hytalemodding",
-  "Name": "ExamplePlugin",
+  "Name": "Return by Death",
   "Version": "1.0.0",
-  "Description": "Description of your plugin",
+  "Description": "Re:Zero's Return by Death Mechanic in Hytale",
   "Authors": [
     {
-      "Name": "Your Name",
-      "Email": "your.email@example.com",
-      "Url": "https://your-website.com"
+      "Name": "Orca449",
+      "Url": "https://www.curseforge.com/members/orca449/projects"
+    },
+    {
+      "Name": "Rainey",
+      "Url": "https://www.curseforge.com/members/rainey_t/projects"
     }
   ],
   "Website": "https://your-plugin-website.com",
