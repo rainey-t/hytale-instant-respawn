@@ -9,19 +9,31 @@ import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.modules.entity.damage.DeathComponent;
 import com.hypixel.hytale.server.core.modules.entity.damage.DeathSystems;
 import com.hypixel.hytale.server.core.universe.Universe;
+import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 public class DeathSystem extends DeathSystems.OnDeathSystem {
-    @Nullable
-    public Query getQuery() {
-        return Player.getComponentType();
+
+    //@Nullable
+    //public Query getQuery() {
+    //    return Player.getComponentType();
+    //}
+
+    @Override
+    public Query<EntityStore> getQuery() {
+        return Query.any();
     }
 
+    //public void onComponentAdded(@Nonnull Ref ref, @Nonnull DeathComponent component, @Nonnull Store store, @Nonnull CommandBuffer commandBuffer) {
+    //    Player player = (Player) store.getComponent(ref, Player.getComponentType());
+    //    assert player != null;
+    //    player.sendMessage(Message.raw("Test"));
+    //}
+
+    @Override
     public void onComponentAdded(@Nonnull Ref ref, @Nonnull DeathComponent component, @Nonnull Store store, @Nonnull CommandBuffer commandBuffer) {
-        Player player = (Player) store.getComponent(ref, Player.getComponentType());
-        assert player != null;
-        player.sendMessage(Message.raw("Test"));
+        Universe.get().sendMessage(Message.raw("Test Message"));
     }
 }
