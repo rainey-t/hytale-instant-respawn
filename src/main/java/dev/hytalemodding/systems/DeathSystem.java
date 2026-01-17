@@ -23,7 +23,7 @@ public class DeathSystem extends DeathSystems.OnDeathSystem {
 
     @Override
     public Query<EntityStore> getQuery() {
-        return Query.any();
+        return Player.getComponentType();
     }
 
     //public void onComponentAdded(@Nonnull Ref ref, @Nonnull DeathComponent component, @Nonnull Store store, @Nonnull CommandBuffer commandBuffer) {
