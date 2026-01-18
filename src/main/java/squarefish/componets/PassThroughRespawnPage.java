@@ -1,4 +1,4 @@
-package dev.hytalemodding.componets;
+package squarefish.componets;
 
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;

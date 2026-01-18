@@ -1,8 +1,8 @@
 {
-  "Group": "dev.hytalemodding",
-  "Name": "Return by Death",
+  "Group": "squarefish",
+  "Name": "Instant Respawn",
   "Version": "1.0.0",
-  "Description": "Re:Zero's Return by Death Mechanic in Hytale",
+  "Description": "Adds Instant Respawn to Hytale",
   "Authors": [
     {
       "Name": "Orca449",
@@ -13,11 +13,10 @@
       "Url": "https://www.curseforge.com/members/rainey_t/projects"
     }
   ],
-  "Website": "https://your-plugin-website.com",
   "ServerVersion": "*",
   "Dependencies": {},
   "OptionalDependencies": {},
   "DisabledByDefault": false,
   "IncludesAssetPack": false,
-  "Main": "dev.hytalemodding.RBDPlugin"
+  "Main": "squarefish.RBDPlugin"
 }

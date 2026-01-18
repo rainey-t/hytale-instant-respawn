@@ -1,11 +1,11 @@
-package dev.hytalemodding;
+package squarefish;
 
 import com.hypixel.hytale.server.core.event.events.player.PlayerReadyEvent;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
-import dev.hytalemodding.commands.ExampleCommand;
-import dev.hytalemodding.events.ExampleEvent;
-import dev.hytalemodding.systems.DeathSystem;
+import squarefish.commands.ExampleCommand;
+import squarefish.events.ExampleEvent;
+import squarefish.systems.DeathSystem;
 
 import javax.annotation.Nonnull;
 
