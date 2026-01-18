@@ -1,0 +1,33 @@
+package dev.hytalemodding.componets;
+
+import com.hypixel.hytale.component.Ref;
+import com.hypixel.hytale.component.Store;
+import com.hypixel.hytale.protocol.packets.interface_.Page;
+import com.hypixel.hytale.server.core.Message;
+import com.hypixel.hytale.server.core.entity.entities.Player;
+import com.hypixel.hytale.server.core.entity.entities.player.pages.RespawnPage;
+import com.hypixel.hytale.server.core.modules.entity.damage.DeathComponent;
+import com.hypixel.hytale.server.core.modules.entity.damage.DeathItemLoss;
+import com.hypixel.hytale.server.core.ui.builder.UICommandBuilder;
+import com.hypixel.hytale.server.core.ui.builder.UIEventBuilder;
+import com.hypixel.hytale.server.core.universe.PlayerRef;
+import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
+
+import javax.annotation.Nonnull;
+
+public class PassThroughRespawnPage extends RespawnPage {
+
+    public PassThroughRespawnPage(@NonNull PlayerRef playerRef, @Nullable Message deathReason, boolean displayDataOnDeathScreen, DeathItemLoss deathItemLoss) {
+        super(playerRef, deathReason, displayDataOnDeathScreen, deathItemLoss);
+    }
+
+
+    @Override
+    public void build(
+            @Nonnull Ref<EntityStore> ref, @Nonnull UICommandBuilder commandBuilder, @Nonnull UIEventBuilder eventBuilder, @Nonnull Store<EntityStore> store
+            ) {
+
+    }
+}
