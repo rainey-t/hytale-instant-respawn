@@ -19,6 +19,7 @@ import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.Universe;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
+import dev.hytalemodding.componets.PassThroughRespawnPage;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -40,17 +41,29 @@ public class DeathSystem extends DeathSystems.OnDeathSystem {
     @Override
     public void onComponentAdded(@Nonnull Ref ref, @Nonnull DeathComponent component, @Nonnull Store store, @Nonnull CommandBuffer commandBuffer) {
 
-        Damage deathInfo = component.getDeathInfo();
         Player playerComponent = (Player) store.getComponent(ref, Player.getComponentType());
-
-        if (playerComponent == null || deathInfo == null){
-            return;
-        }
-
-        component.setDeathMessage(Message.raw("Subaru"));
 
         assert playerComponent != null;
 
-        store.tryRemoveComponent(ref, DeathComponent.getComponentType());
+        Damage deathInfo = component.getDeathInfo();
+        Message deathMessage = deathInfo != null ? deathInfo.getDeathMessage(ref, commandBuffer) : null;
+        component.setDeathMessage(deathMessage);
+        PlayerRef playerRefComponent = (PlayerRef) commandBuffer.getComponent(ref, PlayerRef.getComponentType());
+
+        assert playerRefComponent != null;
+
+        PageManager pageManager = playerComponent.getPageManager();
+        pageManager.openCustomPage(
+                ref, store, new PassThroughRespawnPage(playerRefComponent, deathMessage, component.displayDataOnDeathScreen(), component.getDeathItemLoss())
+        );
+        component.setShowDeathMenu(false);
+
+        World world = playerComponent.getWorld();
+        if (world != null) {
+            playerComponent.getWorld().execute(() -> {
+                playerComponent.getPageManager().setPage(ref, store, Page.None);
+            });
+        }
+
     }
 }
