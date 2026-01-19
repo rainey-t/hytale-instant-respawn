@@ -1,8 +1,8 @@
 {
-  "Group": "squarefish",
+  "Group": "net.squarefish",
   "Name": "Instant Respawn",
   "Version": "1.0.0",
-  "Description": "Adds Instant Respawn to Hytale",
+  "Description": "Disables the death screen",
   "Authors": [
     {
       "Name": "Orca449",
@@ -18,5 +18,5 @@
   "OptionalDependencies": {},
   "DisabledByDefault": false,
   "IncludesAssetPack": false,
-  "Main": "squarefish.RBDPlugin"
+  "Main": "net.squarefish.InstantRespawn"
 }

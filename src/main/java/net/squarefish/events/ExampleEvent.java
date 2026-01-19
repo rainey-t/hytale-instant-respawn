@@ -1,4 +1,4 @@
-package squarefish.events;
+package net.squarefish.events;
 
 import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.entity.entities.Player;
